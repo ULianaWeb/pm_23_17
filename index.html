@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "js/historyAJAX.js",
+            dataType: "script"
+        });
+        $.ajax({
+            type: "GET",
+            url: "js/projectsAJAX.js",
+            dataType: "script"
+        });
+        $.ajax({
+            type: "GET",
+            url: "js/toggle.js",
+            dataType: "script"
+        });
+    </script>
+</head>
+<body>
+<div class="sidebar">
+    <a class="avatar flex relative" href="#">
+        <img src="images/user.png" width="80" alt="">
+        <div class="avatarBadge bgColor9">
+            <span class="white f12 m-a">2</span>
+        </div>
+    </a>
+    <div class="menuTop">
+        <div class="flex">
+            <img class="dots mr-a ml-a" src="images/Trenner.png" alt="">
+        </div>
+        <a class="flex border decorationNone" href="#">
+            <div class="centerBlock">
+                <embed class="icon" type="image/svg+xml" src="images/Board_ICON.svg"/>
+                <span class="white block f16">Board</span>
+            </div>
+        </a>
+        <div class="flex">
+            <img class="dots mr-a ml-a" src="images/Trenner.png" alt="">
+        </div>
+        <a class="flex decorationNone" href="#">
+            <div class="centerBlock">
+                <embed class="icon" type="image/svg+xml" src="images/Projects%20Icon.svg"/>
+                <span class="color1 white block f16">Projects</span>
+                <div class="badge bgColor2">
+                    <span class="white f12 m-a">2</span>
+                </div>
+            </div>
+        </a>
+        <div class="flex">
+            <img class="dots mr-a ml-a" src="images/Trenner.png" alt="">
+        </div>
+        <a class="flex decorationNone" href="#">
+            <div class="centerBlock">
+                <embed class="icon" type="image/svg+xml" src="images/Settings_Icon.svg"/>
+                <span class="color1 white block f16">Settings</span>
+            </div>
+        </a>
+    </div>
+    <div class="menuBottom relative">
+        <a class="flex decorationNone" href="#">
+            <div class="centerBlock">
+                <embed class="icon" type="image/svg+xml" src="images/Upgrad_Icon.svg"/>
+                <span class="color1 white block f16">Upgrade</span>
+                <div class="badge bgColor9">
+                    <span class="white f12 m-a">2</span>
+                </div>
+            </div>
+        </a>
+        <div class="flex">
+            <img class="dots mr-a ml-a" src="images/Trenner.png" alt="">
+        </div>
+        <a class="flex decorationNone" href="#">
+            <div class="centerBlock">
+                <embed class="icon" type="image/svg+xml" src="images/Logout_Icon.svg"/>
+                <span class="white white block f16">Logout</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="main">
+    <div class="header flex center">
+        <div class="btnGroup flex center">
+            <a href="">
+                <img src="images/Update.png" alt=""/>
+            </a>
+            <button id="up" class="popup btn" onclick="showPopup(this)">Dashboard
+                <span class="popupText" id="popUp">Dashboard Page</span>
+            </button>
+        </div>
+        <div class="btnGroup flex center">
+            <a href="">
+                <img src="images/Status.png" alt=""/>
+            </a>
+            <a href="">
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <span>5 USER ONLINE</span>
+                        <img src="images/Arrow.png" alt="">
+                    </button>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="bgColor8 flex center">
+        <div class="tabs flex center">
+            <div class="tab bgWhite flex center">
+                <img src="images/Clock.png" width="32" alt=""/>
+                <span class="f18 black">Active Projects</span>
+                <div class="badgeTab bgColor2">
+                    <span class="white f12 m-a">9</span>
+                </div>
+            </div>
+            <a href="" class="tab bgTab flex center decorationNone">
+                <img src="images/PaperPlane.png" width="32" alt=""/>
+                <span class="f18 black">Messenger</span>
+                <div class="badgeTab bgColor9">
+                    <span class="white f12 m-a">2</span>
+                </div>
+            </a>
+        </div>
+        <div class="searchTabs">
+            <input class="input black transparent w200" type="text" placeholder="Search Project, User, Task, etc...">
+        </div>
+    </div>
+    <div class="workflow space_between flex center">
+        <div class="projectList">
+            <div class="space_between flex center">
+                <input class="input black transparent w300" type="text"
+                       placeholder="Search a Project with Name, Task, User...">
+                <div class="btnGroup flex center">
+                    <a href="">
+                        <div class="dropdown" style="float:left;">
+                            <button class="dropbtn">
+                                <span>New Projects</span>
+                                <span>(Descending)</span>
+                                <img src="images/Arrow.png" alt="">
+                            </button>
+                            <div class="dropdown-content" style="left:0;">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <img src="images/Add.png" alt=""/>
+                    </a>
+                </div>
+            </div>
+            <div class="prjList">
+                <div id="projectsPanel">
+                    <div class="item flex center">
+                        <div class="titleGroup flex center">
+                            <div class="sqrBadge">
+                                <span class="f20 white">23%</span>
+                            </div>
+                            <span class="bold">Create Contact Formular</span>
+                        </div>
+                        <div class="btnGroup flex center">
+                            <button class="btnItem">
+                                <span class="bold">Worlda</span>
+                            </button>
+                            <a href="">
+                                <img src="images/EDIT.png" onmouseover="this.src='images/EDITHover.png'"
+                                     onmouseout="this.src='images/EDIT.png'" alt=""/>
+                            </a>
+                            <a href="">
+                                <img src="images/ArrowItem.png" width="34px" alt=""/>
+                            </a>
+                        </div>
+                    </div>
+                    <hr color="#F2F2F2" size="1">
+                    <div class="item flex center">
+                        <div class="titleGroup flex center">
+                            <div class="sqrBadge">
+                                <span class="f20 white">87%</span>
+                            </div>
+                            <span class="bold">Create Subpage PSD</span>
+                        </div>
+                        <div class="btnGroup flex center">
+                            <button class="btnItem">
+                                <span class="bold">PANORAMA</span>
+                            </button>
+                            <a href="">
+                                <img src="images/EDIT.png" onmouseover="this.src='images/EDITHover.png'"
+                                     onmouseout="this.src='images/EDIT.png'" alt=""/>
+                            </a>
+                            <a href="">
+                                <img src="images/ArrowItem.png" width="34px" alt=""/>
+                            </a>
+                        </div>
+                    </div>
+                    <hr color="#F2F2F2" size="1">
+                </div>
+
+                <div class="item flex center">
+                    <div class="titleGroup flex center">
+                        <div class="sqrBadge">
+                            <span class="f20 white">83%</span>
+                        </div>
+                        <span class="bold">Layout & implementation in HTML & CSS</span>
+                    </div>
+                    <div class="btnGroup flex center">
+                        <button class="btnItem">
+                            <span class="bold">EBAY RELAUNCH</span>
+                        </button>
+                        <button id="show">
+                            <img src="images/EDITHover.png" alt=""/>
+                        </button>
+                        <a href="">
+                            <img src="images/ArrowItem.png" width="34" alt=""/>
+                        </a>
+                    </div>
+                </div>
+                <hr color="#F2F2F2" size="1">
+                <div id="hide">
+                    <div class="item flex center">
+                        <div class="titleGroup flex center">
+                            <div class="sqrBadgeDis">
+                                <span class="f18 color5">66%</span>
+                            </div>
+                            <span class="bold">Create Contact Formular</span>
+                        </div>
+                        <div class="btnGroup flex center">
+                            <img src="images/ImgAvt1.png" alt=""/>
+                            <img src="images/ImgAvt2.png" alt=""/>
+                            <img src="images/ImgAvt3.png" alt=""/>
+                            <img src="images/+3.png" alt=""/>
+                            <button class="btnItem">
+                                <span class="bold">Today, 13:40 pm</span>
+                            </button>
+                            <a href="">
+                                <img src="images/EDIT.png" onmouseover="this.src='images/EDITHover.png'"
+                                     onmouseout="this.src='images/EDIT.png'" alt=""/>
+                            </a>
+                        </div>
+                    </div>
+                    <hr color="#F2F2F2" size="1">
+                    <div class="item flex center">
+                        <div class="titleGroup flex center">
+                            <div class="sqrBadgeDis">
+                                <span class="f18 color5">READY</span>
+                            </div>
+                            <span class="color4 lined">Implementation in the Layout</span>
+                        </div>
+                        <div class="btnGroup flex center">
+                            <img src="images/ImgAvt2.png" alt=""/>
+                            <img src="images/ImgAvt3.png" alt=""/>
+                            <button class="btnItem">
+                                <span class="bold">Today, 13:40 pm</span>
+                            </button>
+                            <a href="">
+                                <img src="images/EDIT.png" onmouseover="this.src='images/EDITHover.png'"
+                                     onmouseout="this.src='images/EDIT.png'" alt=""/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="archive">
+                <div class="btnGroup flex center">
+                    <a href="" class="decorationNone">
+                        <span>Project Archiv</span>
+                        <img src="images/ArrowRight.png" alt="">
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="history">
+            <div class="histList">
+                <!--<div class="histItem flex center">
+                    <div class="flex center">
+                        <img src="images/Avatar1.png" alt="">
+                        <div class="histText">
+                            <div class="topTitle">
+                                <span class="bold">Mark P.</span>
+                                <span class="color1">add an Image into Worlda</span>
+                            </div>
+                            <div class="f14 color2">
+                                <span>TODAY,</span>
+                                <span> 10:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="#F2F2F2" size="1">
+                <div class="histItem flex center">
+                    <div class="flex center">
+                        <img src="images/Avatar2.png" alt="">
+                        <div class="histText">
+                            <div class="topTitle">
+                                <span class="bold">Marvin S.</span>
+                                <span class="color1">add an Image into Worlda</span>
+                            </div>
+                            <div class="f14 color2">
+                                <span>TODAY,</span>
+                                <span> 10:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="#F2F2F2" size="1">
+                <div class="histItem flex center">
+                    <div class="flex center">
+                        <img src="images/Avatar3.png" alt="">
+                        <div class="histText">
+                            <div class="topTitle">
+                                <span class="bold">Sebastian K.</span>
+                                <span class="color1">add an Image into Worlda</span>
+                            </div>
+                            <div class="f14 color2">
+                                <span>TODAY,</span>
+                                <span> 10:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="#F2F2F2" size="1">
+                <div class="histItem flex center">
+                    <div class="flex center">
+                        <img src="images/Avatar1.png" alt="">
+                        <div class="histText">
+                            <div class="topTitle">
+                                <span class="bold">Mark P.</span>
+                                <span class="color1">add an Image into Worlda</span>
+                            </div>
+                            <div class="f14 color2">
+                                <span>TODAY,</span>
+                                <span> 10:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="#F2F2F2" size="1">
+                <div class="histItem flex center">
+                    <div class="flex center">
+                        <img src="images/Avatar4.png" alt="">
+                        <div class="histText">
+                            <div class="topTitle">
+                                <span class="bold">Philip O.</span>
+                                <span class="color1">add an Image into Worlda</span>
+                            </div>
+                            <div class="f14 color2">
+                                <span>TODAY,</span>
+                                <span> 10:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="#F2F2F2" size="1">
+                <div class="histItem flex center">
+                    <div class="flex center">
+                        <img src="images/Avatar1.png" alt="">
+                        <div class="histText">
+                            <div class="topTitle">
+                                <span class="bold">Mark P.</span>
+                                <span class="color1">add an Image into Worlda</span>
+                            </div>
+                            <div class="f14 color2">
+                                <span>TODAY,</span>
+                                <span> 10:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="#F2F2F2" size="1">
+                <div class="histItem flex center">
+                    <div class="flex center">
+                        <img src="images/Avatar5.png" alt="">
+                        <div class="histText">
+                            <div class="topTitle">
+                                <span class="bold">Benni I.</span>
+                                <span class="color1">add an Image into Worlda</span>
+                            </div>
+                            <div class="f14 color2">
+                                <span>TODAY,</span>
+                                <span> 10:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="#F2F2F2" size="1">
+                <div class="histItem flex center">
+                    <div class="flex center">
+                        <img src="images/Avatar5.png" alt="">
+                        <div class="histText">
+                            <div class="topTitle">
+                                <span class="bold">Benni I.</span>
+                                <span class="color1">add an Image into Worlda</span>
+                            </div>
+                            <div class="f14 color2">
+                                <span>TODAY,</span>
+                                <span> 10:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="#F2F2F2" size="1">
+                <div class="histItem flex center">
+                    <div class="flex center">
+                        <img src="images/Avatar5.png" alt="">
+                        <div class="histText">
+                            <div class="topTitle">
+                                <span class="bold">Benni I.</span>
+                                <span class="color1">add an Image into Worlda</span>
+                            </div>
+                            <div class="f14 color2">
+                                <span>TODAY,</span>
+                                <span> 10:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr color="#F2F2F2" size="1">
+                <div class="histItem flex center">
+                    <div class="flex center">
+                        <img src="images/Avatar5.png" alt="">
+                        <div class="histText">
+                            <div class="topTitle">
+                                <span class="bold">Benni I.</span>
+                                <span class="color1">add an Image into Worlda</span>
+                            </div>
+                            <div class="f14 color2">
+                                <span>TODAY,</span>
+                                <span> 10:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+            <div class="archive">
+                <div class="btnGroup flex center">
+                    <a href="" class="decorationNone">
+                        <span>Project Archiv</span>
+                        <img src="images/ArrowRight.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function showPopup(elem) {
+        let id = elem.id;
+        let popup;
+        let popdown;
+        switch (id) {
+            case "up" :
+                popup = document.getElementById("popUp");
+                popup.classList.toggle("show");
+                break;
+            case "down" :
+                popdown = document.getElementById("popDown");
+                popdown.classList.toggle("show");
+                break;
+            default:
+                console.log("ID " + id + " don't exist.");
+        }
+    }
+</script>
+</body>
+</html>
