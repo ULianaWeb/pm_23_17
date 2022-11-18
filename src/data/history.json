@@ -1,34 +1,34 @@
 [
   {
-    "imageURL": "images/Avatar1.png",
+    "imageURL": "../img/Avatar1.png",
     "name": "Mark P.",
     "description": "add an Image into Worlda",
     "day": "TODAY",
     "time": "10:30 PM"
   },
   {
-    "imageURL": "images/Avatar2.png",
+    "imageURL": "../img/Avatar2.png",
     "name": "Marvin S.",
     "description": "add an Image into Worlda",
     "day": "TODAY",
     "time": "10:30 PM"
   },
   {
-    "imageURL": "images/Avatar3.png",
+    "imageURL": "../img//Avatar3.png",
     "name": "Sebastian K.",
     "description": "add an Image into Worlda",
     "day": "TODAY",
     "time": "10:30 PM"
   },
   {
-    "imageURL": "images/Avatar4.png",
+    "imageURL": "../img//Avatar4.png",
     "name": "Philip O.",
     "description": "add an Image into Worlda",
     "day": "TODAY",
     "time": "10:30 PM"
   },
   {
-    "imageURL": "images/Avatar5.png",
+    "imageURL": "../img//Avatar5.png",
     "name": "Benni I.",
     "description": "add an Image into Worlda",
     "day": "TODAY",

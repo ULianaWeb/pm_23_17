@@ -16,11 +16,11 @@ $.ajax({
                 "<span id=\"s3\" class=\"bold\">"+response[i].name+"</span>" +
                 "</button>" +
                 "<a href=\"\">" +
-                "<img src=\"images/EDIT.png\" onmouseover=\"this.src='images/EDITHover.png'\"\n" +
-                "                 onmouseout=\"this.src='images/EDIT.png'\" alt=\"\"/>" +
+                "<img src=\"img/EDIT.png\" onmouseover=\"this.src='img/EDITHover.png'\"\n" +
+                "                 onmouseout=\"this.src='img/EDIT.png'\" alt=\"\"/>" +
                 "</a>" +
                 "<a href=\"\">" +
-                "<img src=\"images/ArrowItem.png\" width=\"34px\" alt=\"\"/>" +
+                "<img src=\"img/ArrowItem.png\" width=\"34px\" alt=\"\"/>" +
                 "</a>" +
                 "</div>" +
                 "</div>" +
